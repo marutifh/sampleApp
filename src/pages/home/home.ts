@@ -10,9 +10,9 @@ export class HomePage {
   public selectedEmployees: any = [];
   public employees: any = [];
   public isSearchOn: any = false;
-  public myInput:any ="";
+  public myInput:any = "";
   constructor(public navCtrl: NavController) {
-      this.selectedEmployees = ["me","you","and","us","family"];
+      this.selectedEmployees = [];
       this.employees = ["dummy","care","me","try","we"];
   }
   search(event) {
@@ -29,10 +29,10 @@ export class HomePage {
   onBlur(event) {
     this.myInput = "";
     this.isSearchOn = false;
-
   }
   itemTapped(event, employee) {
     debugger
+    this.selectedEmployees.push(employee);
     this.isSearchOn = false;
     console.log(employee);
   }
